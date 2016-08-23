@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo -e "\e[32m\e[1mConnecting with keep alive option to the robot\e[39m\e[21m"
+
+ssh -o TCPKeepAlive=yes -o ServerAliveInterval=50 nao@$1

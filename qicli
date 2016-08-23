@@ -1,0 +1,46 @@
+_qicli()
+{
+	local cur prev opts
+
+	COMPREPLY=()				# possible completion words read by complete sw
+	
+	cur="${COMP_WORDS[COMP_CWORD]}"
+	prev="${COMP_WORDS[COMP_CWORD-1]}"
+	
+	opts="info call trace watch"       
+
+       	case "${prev}" in
+		info)
+            		local service=$(for x in `qicli info --hidden | tr -d [:blank:]'['']'0-9 | tr '\n' ' '`; do echo ${x} ; done  )
+			echo $service
+			COMPREPLY=( $(compgen -W "${service}" ${cur}) )
+			return 0
+			;;
+		call)
+			local service=$(for x in `qicli info --hidden | tr -d [:blank:]'['']'0-9 | tr '\n' ' '`; do echo $x ; done  )
+                        COMPREPLY=( $(compgen -W "${service}" ${cur}) )
+                        
+			if [[ ${cur} == *.* ]] ; then		# here cur has the "service." so it must be matched the hole word
+				local service_cur=${cur%%.*}
+			     	local method=$(for x in `qicli info ${service_cur} | awk '{print $2}'`; do echo "$service_cur.$x" ; done  )
+				local method_aux=${method#*$service_cur'.Methods:'}
+				local method_final=${method_aux%$service_cur'.Signals'*}
+
+				COMPREPLY=( $(compgen -W "${method_final}" ${cur}) )
+	    	        fi
+
+			return 0
+			;;
+		trace)
+			return 0
+			;;
+		watch)
+			return 0
+			;;
+		*)	
+			COMPREPLY=( $(compgen -W "${opts}" ${cur}) )
+			return 0
+			;;
+	esac
+}
+complete -F _qicli qicli
