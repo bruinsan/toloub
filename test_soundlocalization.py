@@ -28,17 +28,18 @@ print "Type CTRL+C to stop soundLocalization"
 try:
     while(True):
         soundPos = memory.getData("ALSoundLocalization/SoundLocated")[1]
-        print "polar coord = ", soundPos, "\n"
-        print "confidence = ", soundPos[2], "\n"
+        # print "polar coord = ", soundPos, "\n"
+       # print "confidence = ", soundPos[2], "\n"
         
-        if soundPos[2] > 0.75:
+        if soundPos[2] > 0.75:  # confidence
             x = math.cos(soundPos[1])*math.cos(soundPos[0])
             y = math.cos(soundPos[1])*math.sin(soundPos[0])
             z = math.sin(-soundPos[1])		# elevation doesn't work very well
-            print "x,y,z = ", [x,y,z], "\n"
+            # print "x,y,z = ", [x,y,z], "\n"
 
-            tracker.lookAt([x,y,z],0,0.1,0)
-        time.sleep(0.5)
+            # tracker.lookAt([x,y,z],0,0.1,0)
+        print math.degrees(soundPos[0])
+        time.sleep(0.5)
 
 except KeyboardInterrupt:
     # unsubscribe and stop sound localization
