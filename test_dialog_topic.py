@@ -10,7 +10,7 @@ __copyright__ = "Copyright June 2016, Aldebaran Robotics"
 def main(session,topic):
     dialog = session.service("ALDialog")
 
-    topic_name = dialog.loadTopic("/home/nao/"+topic)
+    topic_name = dialog.loadTopic("/home/nao/"+topic+".top")
     dialog.activateTopic(topic_name)
 
     dialog.runDialog()

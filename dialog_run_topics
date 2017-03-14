@@ -1,0 +1,27 @@
+from tools.ssh_tools import send_file
+import pytest
+import parser
+
+path = "/home/bindrigodossantos/Downloads/Validation_2.5.4/"
+
+def pytest_addoption(parser):
+    parser.addoption("--topic", help="topic name")
+
+def test_run_topic(autonomous_life, dialog, request):
+    # send topic to the robot
+    # load and activate topic
+    # run dialog
+    print pytest.config.getoption("--topic", default='topic not found')
+    autonomous_life.setState("disabled")
+
+    send_file(path + topic)
+    
+    dialog.loadTopic("/home/nao/" + topic)
+    dialog.activateTopic("mytopic")
+    dialog.runDialog()
+
+    def ending():
+        # deactivate and unload topic, then stop dialog
+        pass
+    request.addfinalizer(ending)
+
