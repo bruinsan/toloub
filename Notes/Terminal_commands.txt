@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-05T15:11:10+02:00
+
+====== Terminal commands ======
+Created vendredi 05 mai 2017
+
+avahi-browse naoqi._tcp | grep -i kratus
+
+===== Replace python version =====
+sed -i '/s/<actual_version>/<new_version>/' ~/.zshrc
+
+===== Attach GDB to a process =====
+1 wait for deadlock
+
+2 find the naoqi-bin and naoqi-service and plublic-sd* or whatever process you want to get us:
+
+ps aux
+
+3 attach gdb to it
+
+gdb -p <thepid>
+
+4 do gdb stuff:
+
+set height 0    (so you dont have to keep hitting enter to scroll the terminal)
+enable logging 
+thread apply all bt
+
+5 hit ctrl+d to exit gdb
+
+6 send us the gdb.txt file and tell us which process it was attached to!  (or rename the file better)
+
+===== SSH Keep Alive =====
+ssh -o TCPKeepAlive=yes -o ServerAliveInterval=50 nao@ROBOT_IP

@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-03T13:15:06+02:00
+
+====== Tablet commands ======
+Created mercredi 03 mai 2017
+
+===== Settings =====
+qicli call ALTabletService._openSettings
+
+===== Rebooting tablet =====
+cd .local/share/PackageManager/apps/j-tablet-service/
+./adb reboot
+
+===== Installing an apk =====
+/opt/aldebaran/www/apps/j-tablet-browser/adb install -r robotservice-1.31.apk
+OR
+qicli call ALTabletService._installApk "http://198.18.0.1/apps/j-tablet-browser/robotservice-1.33.apk"

@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-28T09:56:25+02:00
+
+====== C++ ======
+Created vendredi 28 avril 2017
+
+For not needing to run naoqi-bin before Thierry tests (libqi initial tests), I can try:
+
+_session = qi::makeSession();
+_session->listenStandalone("tcp://127.0.0.1:0");
+
+seem on [[/home/bindrigodossantos/git_full/life/lifehistory/test]]
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+===== Create a toolchain =====
+qitoolchain create <toolchain_name> <path to toolchain.xml>
+qitoolchain create linux64 ftp://kiwi.aldebaran.lan/qi/toolchains/feeds/master/linux64.xml
+
+===== Create a configuration based on a toolchain =====
+qibuild add-config <config_name> -t <toolchain_name>
+qibuild add-config linux64 -t linux64
+
+===== Remove toolchain or configuration =====
+qitoolchain remove -f <toolchain>
+qibuild rm-config <config>
+
+===== Associate a config to a project =====
+qibuild configure -c <configuration>
+
+===== Compile the project =====
+qibuild make -c <configuration> -j<number of cores to use on compilation>
+
+---------------------------------------------------------------------------------------------------------------------------------
+

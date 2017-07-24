@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-05T10:04:18+02:00
+
+====== Crazy Preferences ======
+Created vendredi 05 mai 2017
+
+===== Automatic sent of dumps to the cloud =====
+qicli call ALRobotHealthMonitor._getReportingEnabled
+qicli call ALRobotHealthMonitor._setReportingEnabled 0
+
+===== Forcing finish of GSW =====
+qicli call ALPreferenceManager.setValue com.aldebaran.wizard state "finished"

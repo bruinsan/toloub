@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-03T13:22:44+02:00
+
+====== GIT ======
+Created mercredi 03 mai 2017
+
+git fetch --all
+git rebase
+
+git add <file>
+git commit -m "<message>"
+qa_push
+
+git add <file>
+git commit -m "fixup"
+git rebase -i
+change "pick" by "f" and put it after the commit to be fixed
+qa_push
+
+---------------------------------------------------------------------------------------------------------------------------
+git checkout -b team/qa/agility --track origin/team/qa/agility
+

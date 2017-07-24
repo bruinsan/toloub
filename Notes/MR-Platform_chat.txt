@@ -1,0 +1,52 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-05-03T10:02:17+02:00
+
+====== MR-Platform chat ======
+Created mercredi 03 mai 2017
+
+[W] 1493384725.345843 12223 qimessaging.transportsocketcache: Disconnected socket not found in disconnect infos.
+oui et non 
+oui parcequ'on a ajoute ce warning dans
+le mr
+
+et oui parceqeu ca n'indique pas un gros probleme
+on reflechit peut etre a changer le niveau de log, a discuter
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+[W] 1493984929.788990 10184 qimessaging.transportsocketcache: Disconnected socket not found in disconnect infos.
+dsl, j'ai appuyé trop vite sur Enter ☺
+je t'en prie
+Ma question est si c'est normal avoir bcp de messages avec ce log ou avec celui ci
+
+[W] 1493978559.796388 9542 qimessaging.messagesocket: 0xb0a7f414: Socket must be connected to send().
+Le premier ("qimessaging.transportsocketcache: Disconnected socket not found in disconnect infos.") est normal en l'état actuel du code (peut-être faudrait-il le passer en log d'info)
+Le second (Socket must be connected to send().) n'est pas normal s'il arrive souvent
+il signifie que quelqu'un essaie d'envoyer un message via une socket fermée
+autrement dit, le message ne sera jamais envoyé (et donc pas reçu)
+------------------------------------------------------------------------------------------------------------------------------------------------
+Je t'explique
+à l'origine, il y avait une race dans un truc qui s'appelle le socket cache
+en fait, au lieu de créer soi-même sa socket, on la demande au socket cache
+si la socket n'existe pas, il la crée et garde une référence dessus
+pour régler la race, il a fallu ajouter une méthode  pour "rendre" la socket au cache quand on n'en a plus besoin (comme ça c'est symmétrique)
+mais à l'heure actuelle, le fait de rendre la socket n'est pas implémentée partout
+donc le socket cache râle car il cherche la socket qui vient de se déconnecter et ne la trouve pas
+en fait, ce n'est pas différent du comportement précédent, mais avant il n'y avait aucun log
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+il faut grosso modo que tu fasses un objet, est détruit par le thread réseau, et qui dans le destructeur détruit un focusreleasesubscriber
+c'était ça le deadlock grosso modo
+je ne suis pas sur d'avoir compris comment faire ça, dsl
+bah tu fais un service qui a une méthode qui retourne un objet, et un client remote qui appelle cette méthode pour prendre l'objet. Quand le client abandonne l'objet, il est détruit du côté du service depuis le thread du réseau
+ensuite il suffit que l'objet utilise un focus release subscriber et le détruise au destructeur pour reproduire l'effet
+on aurait pu écrire un test, c'est sûr... 😕
+
+
+
+
+
+
+
+

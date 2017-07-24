@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-28T14:32:34+02:00
+
+====== Pytest Commands ======
+Created vendredi 28 avril 2017
+
+===== Generating a report of test results =====
+--junit-xml=<REPORT_NAME>.xml
+
+===== Verbose mode =====
+py.test -v
+
+===== List all fixtures =====
+py.test --fixtures
+

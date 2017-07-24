@@ -1,0 +1,11 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-07-24T10:09:41+02:00
+
+====== Python ======
+Created lundi 24 juillet 2017
+
+===== Run command on terminal =====
+subprocess.Popen → doens't block process
+subprocess.call → block process until the end
+

@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-04-28T09:45:16+02:00
+
+====== Robot Commands ======
+Created vendredi 28 avril 2017
+
+===== Json on methods =====
+qicli call --json ALTracker.lookAt [1,0,2] 1 0
+qicli call ALDialog.sayError --json [\"error\"] \"test\"
+
+===== Head ID =====
+qicli call ALMemory.getData RobotConfig/Head/FullHeadId
+
+===== Robot intern clock =====
+
+==== Setting robot time hour ====
+qicli call ALMemory.insertData "Launchpad/Hour" 2
+
+===== Allowing SSH connections =====
+ssh-copy-id nao@ROBOT_IP
+
+===== Get Running Apps =====
+qicli call ALBehaviorManager.getRunningBehaviors
+
+===== Cloud association/dissociation =====
+qicli call _ALCloud.associateUser "user" "psswd"
+qicli call _ALCloud.dissociateUser (removes associated user)
+qicli call _ALCloud.associatedUser (who is associated to the robot)
+
+===== Installing/Removing Pkg =====
+qicli call PackageManager.installPkg <full_path_to_pkg>
+qicli call PackageManager.removePkg <package_name> (usually inside .local/share/PackageManager/apps)
+
+===== Launch/Stop App =====
+qicli call ALBehaviorManager.runBehavior "<package>/."
+qicli call ALBehaviorManager.stopAllBehaviors
+
+===== Remove tablet tokens =====
+rm .local/share/naoqi/*tablet
+rm .local/share/naoqi/*audioflinger
+
+or
+
+rm .local/share/naoqi/*-*
+
+===== Minidump =====
+minidump_stackwalk <file.dmp> <path to symbols> > stacktrace
