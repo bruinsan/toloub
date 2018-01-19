@@ -1,0 +1,21 @@
+process:
+    - almonitor
+    - alprefman
+    - actuation
+    - alstore
+    - ALSystem
+    - animatedspeech
+    - basicawareness
+    - ALUserSession
+    - connectionmanager
+    - ALMood
+    - altelepathe
+    - _SemanticEngine
+    - ALDialog
+    - _AsrCompiler2
+    - HumanAwareness
+    - _AsrCompiler1
+    - ALAutonomousLife
+    - mapping
+    - naoqi-bin
+    - naoqi-service
