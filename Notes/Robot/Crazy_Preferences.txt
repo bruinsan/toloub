@@ -11,3 +11,5 @@ qicli call ALRobotHealthMonitor._setReportingEnabled 0
 
 ===== Forcing finish of GSW =====
 qicli call ALPreferenceManager.setValue com.aldebaran.wizard state "finished"
+
+qicli call _ALCloud.associateUser --json \"bindrigodossantos\" \"blabla\!\!\"

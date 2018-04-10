@@ -10,14 +10,16 @@ git rebase
 
 git add <file>
 git commit -m "<message>"
-qa_push
+git push
 
 git add <file>
 git commit -m "fixup"
 git rebase -i
 change "pick" by "f" and put it after the commit to be fixed
-qa_push
+git push
 
 ---------------------------------------------------------------------------------------------------------------------------
 git checkout -b team/qa/agility --track origin/team/qa/agility
+
+---------------------------------------------------------------------------------------------------------------------------
 
