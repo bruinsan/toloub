@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-04-11T14:39:36+02:00
+
+====== GDB ======
+Created mercredi 11 avril 2018
+
+gdb -p <thepid>
+
+4 do gdb stuff:
+
+set height 0    (so you dont have to keep hitting enter to scroll the terminal)
+enable logging 
+thread apply all bt
+
+5 hit ctrl+d to exit gdb

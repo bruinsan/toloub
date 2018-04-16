@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-04-10T10:37:35+02:00
+
+====== Gateway ======
+Created mardi 10 avril 2018
+
+===== Manifest.xml for gateway activation =====
+For allow modifications on [[/opt/aldebaran/share/naoqi/apps/naoqi/]] → mount -o remount,rw /
+ftp://kiwi.aldebaran.lan/testdata/platform/manifest.xml
+
+===== Spammer =====
+
+https://gerrit.aldebaran.lan/#/c/88595/ - authentification spammer
+./build-release2.9/sdk/bin/auth-spammer --target=tcps://10.0.160.114:9503 --attempts=100 --parallel=10 --delay=10 --login=tablet --token=161b6b3b-388a-4608-929b-3b16829eb4b1
+
+Finding token for "tablet" user: ~/.local/share/naoqi/qi.private.aldebaran.lan-tablet

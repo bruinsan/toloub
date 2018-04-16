@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-04-11T09:56:12+02:00
+
+====== Rootfs ======
+Created mercredi 11 avril 2018
+
+cat /etc/os-release
