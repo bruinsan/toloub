@@ -16,3 +16,17 @@ cd .local/share/PackageManager/apps/j-tablet-service/
 /opt/aldebaran/www/apps/j-tablet-browser/adb install -r robotservice-1.31.apk
 OR
 qicli call ALTabletService._installApk "http://198.18.0.1/apps/j-tablet-browser/robotservice-1.33.apk"
+
+===== Checking robotservice mode =====
+In order to check if RobotService is passing through the gateway or not: 
+adb shell am force-stop com.aldebaran.robotservice 
+
+while looking on logcat:
+adb logcat -s RobotService
+
+
+===== Robot Service =====
+http://swqa.aldebaran.com/files/test/android/robotservice/
+
+===== Test qiSDK =====
+http://swqa.aldebaran.com/files/test/android/testqisdk/

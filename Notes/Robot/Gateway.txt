@@ -6,8 +6,13 @@ Creation-Date: 2018-04-10T10:37:35+02:00
 Created mardi 10 avril 2018
 
 ===== Manifest.xml for gateway activation =====
+sudo account
 For allow modifications on [[/opt/aldebaran/share/naoqi/apps/naoqi/]] → mount -o remount,rw /
 ftp://kiwi.aldebaran.lan/testdata/platform/manifest.xml
+
+===== Launch Naoqi =====
+naoqi account
+[[/opt/aldebaran/bin/naoqi-bin]] --qi-listen-url tcp://127.0.0.1:9559
 
 ===== Spammer =====
 

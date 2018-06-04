@@ -10,7 +10,7 @@ For not needing to run naoqi-bin before Thierry tests (libqi initial tests), I c
 _session = qi::makeSession();
 _session->listenStandalone("tcp://127.0.0.1:0");
 
-seem on [[/home/bindrigodossantos/git_full/life/lifehistory/test]]
+seen on [[/home/bindrigodossantos/git_full/life/lifehistory/test]]
 
 ---------------------------------------------------------------------------------------------------------------------------------
 

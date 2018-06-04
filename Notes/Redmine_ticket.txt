@@ -5,9 +5,9 @@ Creation-Date: 2017-05-05T16:41:23+02:00
 ====== Redmine ticket ======
 Created vendredi 05 mai 2017
 
-*[description]*
-*[version]*
-*[step to reproduce]*
-*[observed]*
-*[expected]*
-*[comments]* 		
+h1. Description
+h1. Version
+h1. Step to reproduce
+h1. Observed
+h1. Expected
+h1. Comments

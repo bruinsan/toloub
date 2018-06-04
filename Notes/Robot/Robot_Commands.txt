@@ -12,6 +12,9 @@ qicli call ALDialog.sayError --json [\"error\"] \"test\"
 ===== Head ID =====
 qicli call ALMemory.getData RobotConfig/Head/FullHeadId
 
+===== Body ID =====
+qicli call ALMemory.getData Device/DeviceList/ChestBoard/Bootloader/BodyId
+
 ===== Robot intern clock =====
 
 ==== Setting robot time hour ====
