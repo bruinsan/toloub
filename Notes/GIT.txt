@@ -18,8 +18,19 @@ git rebase -i
 change "pick" by "f" and put it after the commit to be fixed
 git push
 
----------------------------------------------------------------------------------------------------------------------------
+===== Create branch (local and remote) =====
 git checkout -b team/qa/agility --track origin/team/qa/agility
 
----------------------------------------------------------------------------------------------------------------------------
+===== Remove Branch (local and remote) =====
+git branch -D local_branch
+git push origin --delete remote_branch
 
+===== Tag =====
+git tag -a v1.7.0 -m "Version 1.7.0"
+
+-m → comment about your tag
+
+===== Revert branch to a specific tag =====
+git checkout master
+git reset --hard tag_ABC
+git push --force origin master
