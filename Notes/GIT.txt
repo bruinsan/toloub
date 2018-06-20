@@ -22,8 +22,8 @@ git push
 git checkout -b team/qa/agility --track origin/team/qa/agility
 
 ===== Remove Branch (local and remote) =====
-git branch -D local_branch
 git push origin --delete remote_branch
+git branch -D local_branch
 
 ===== Tag =====
 git tag -a v1.7.0 -m "Version 1.7.0"
@@ -34,3 +34,11 @@ git tag -a v1.7.0 -m "Version 1.7.0"
 git checkout master
 git reset --hard tag_ABC
 git push --force origin master
+
+===== Commit on differents branchs =====
+Considering branches A, B
+
+git checkout A
+git commit -m "Fixed the bug x"
+git checkout B
+git cherry-pick A

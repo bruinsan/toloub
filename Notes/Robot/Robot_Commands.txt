@@ -17,7 +17,7 @@ qicli call ALMemory.getData Device/DeviceList/ChestBoard/Bootloader/BodyId
 
 ===== Robot intern clock =====
 
-==== Setting robot time hour ====
+===== Setting robot time hour =====
 qicli call ALMemory.insertData "Launchpad/Hour" 2
 
 ===== Allowing SSH connections =====
@@ -30,6 +30,7 @@ qicli call ALBehaviorManager.getRunningBehaviors
 qicli call _ALCloud.associateUser "user" "psswd"
 qicli call _ALCloud.dissociateUser (removes associated user)
 qicli call _ALCloud.associatedUser (who is associated to the robot)
+qicli call _ALCloud.associateUser --json \"bindrigodossantos\" \"blabla\!\!\"
 
 ===== Installing/Removing Pkg =====
 qicli call PackageManager.installPkg <full_path_to_pkg>
@@ -42,10 +43,19 @@ qicli call ALBehaviorManager.stopAllBehaviors
 ===== Remove tablet tokens =====
 rm .local/share/naoqi/*tablet
 rm .local/share/naoqi/*audioflinger
-
-or
-
+or simply
 rm .local/share/naoqi/*-*
 
 ===== Minidump =====
 minidump_stackwalk <file.dmp> <path to symbols> > stacktrace
+
+===== RunBehavior =====
+INTALLED PKG: TEST_VOLUME_LAG
+
+==== First Case: ====
+**Path to .XAR**: .../test_volume_lag/behavior_1/behavior.xar
+**Command to run**: qicli call ALBehaviorManager.runBehavior test_volume_lag/behavior_1
+
+==== Second Case: ====
+**Path to .XAR**: .../test_volume_lag/behavior.xar
+**Command to run**: qicli call ALBehaviorManager.runBehavior test_volume_lag/.

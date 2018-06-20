@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-11T14:41:44+02:00
+
+====== Gateway ======
+Created lundi 11 juin 2018
+
+===== Python Connection =====
+
+class ClientFactory:
+	def newAuthenticator(self):
+		class Authenticator:
+			def initialAuthData(self):
+				return {'user': 'nao', 'token': 'nao'}
+		return Authenticator()
+
+http://swqa.aldebaran.com/wiki/doku.php?id=wiki:swqa:testrail:testrail_gettingstarted#running_your_tests_on_releases_25_28_29
