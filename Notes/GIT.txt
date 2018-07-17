@@ -30,6 +30,9 @@ git tag -a v1.7.0 -m "Version 1.7.0"
 
 -m → comment about your tag
 
+===== Rebase dev_branch to master_branch =====
+
+
 ===== Revert branch to a specific tag =====
 git checkout master
 git reset --hard tag_ABC

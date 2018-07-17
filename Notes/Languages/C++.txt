@@ -34,3 +34,5 @@ qibuild make -c <configuration> -j<number of cores to use on compilation>
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+===== Check shared object dependencies =====
+ldd <binary_file>
