@@ -22,7 +22,7 @@ git push
 git checkout -b team/qa/agility --track origin/team/qa/agility
 
 ===== Remove Branch (local and remote) =====
-git push origin --delete remote_branch
+git push origin --delete remote_branch	
 git branch -D local_branch
 
 ===== Tag =====
