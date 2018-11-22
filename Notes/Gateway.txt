@@ -11,7 +11,7 @@ class ClientFactory:
 	def newAuthenticator(self):
 		class Authenticator:
 			def initialAuthData(self):
-				return {'user': 'nao', 'token': 'nao'}
+				return {'user': 'nao', 'token': '<ROBOT_PASSWORD>'}
 		return Authenticator()
 
 http://swqa.aldebaran.com/wiki/doku.php?id=wiki:swqa:testrail:testrail_gettingstarted#running_your_tests_on_releases_25_28_29

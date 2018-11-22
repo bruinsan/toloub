@@ -14,3 +14,27 @@ qicli call ALPreferenceManager.setValue com.aldebaran.wizard state "finished"
 
 ===== Forcing start of GSW =====
 qicli call ALPreferenceManager.setValue com.aldebaran.wizard state []
+
+===== Standard preferences =====
+[
+  [
+	"com.aldebaran.robotwebpage",
+	"ChosenLanguage",
+	"English"
+  ],
+  [
+	"com.aldebaran.robotwebpage",
+	"CurrentPage",
+	"menu.root.myrobot"
+  ],
+  [
+	"com.aldebaran.robotwebpage",
+	"EulaVersion",
+	"2.9"
+  ],finished
+  [
+	"com.aldebaran.wizard",
+	"state",
+	"finished"
+  ]
+]

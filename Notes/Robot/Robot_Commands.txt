@@ -13,7 +13,8 @@ qicli call ALDialog.sayError --json [\"error\"] \"test\"
 qicli call ALMemory.getData RobotConfig/Head/FullHeadId
 
 ===== Body ID =====
-qicli call ALMemory.getData Device/DeviceList/ChestBoard/Bootloader/BodyId
+qicli call ALMemory.getDataListName --prettyprint | grep -i bodyid
+qicli call ALMemory.getData <magic_key_name>
 
 ===== Robot intern clock =====
 
