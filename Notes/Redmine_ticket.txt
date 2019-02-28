@@ -11,3 +11,27 @@ h1. Step to reproduce
 h1. Observed
 h1. Expected
 h1. Comments
+
+
+{{collapse
+<pre><code class="python">
+	def is_alive(self, timeout=30):
+		self._logger.info("Checking if remote host responds to ping")
+		sleeping_time = 5
+		retry = timeout / sleeping_time
+		is_alive = False
+
+		for _ in range(retry):
+			return_code = subprocess.call(['ping', self.ip_address, '-c', '3'], stdout=open(os.devnull, 'w'), stderr=open(os.devnull, 'w'))
+			if return_code:
+				self._logger.debug("Host is unreachable. Next retry in {sleeping_time}s".format(sleeping_time=sleeping_time))
+				time.sleep(sleeping_time)
+				continue
+
+			self._logger.debug("Host is now reacheable")
+			is_alive = True
+			break
+
+		return is_alive
+</code></pre>
+}}

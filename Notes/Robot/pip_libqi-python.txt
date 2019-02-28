@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-02-28T11:33:11+01:00
+
+====== pip libqi-python ======
+Created jeudi 28 février 2019
+
+	Linux - "qi-X.X.X-cp27-none-manylinux1_x86_64.whl"
+	Windows - "qi-X.X.X-cp27-none-win_amd64.whl"
+	MacOS - "qi-X.X.X-cp27-none-macosx_10_12_intel.whl"

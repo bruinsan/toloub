@@ -5,5 +5,7 @@ Creation-Date: 2018-11-06T09:52:26+01:00
 ====== Minicom ======
 Created mardi 06 novembre 2018
 
+sudo minicom -D /dev/ttyUSB0 -s
+
 {{~/Pictures/Screenshot from 2018-11-06 10-01-44.png}}
 
