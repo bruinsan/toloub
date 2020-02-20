@@ -14,6 +14,7 @@ qicli call ALPreferenceManager.setValue com.aldebaran.wizard state "finished"
 qicli call ALPreferenceManager.setValue com.aldebaran.robotwebpage CurrentPage menu.root.myrobot
 qicli call ALPreferenceManager.setValue com.aldebaran.robotwebpage EulaVersion 2.9
 
+
 ===== Forcing start of GSW =====
 qicli call ALPreferenceManager.setValue com.aldebaran.wizard state []
 

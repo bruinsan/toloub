@@ -5,12 +5,18 @@ Creation-Date: 2017-05-05T16:41:23+02:00
 ====== Redmine ticket ======
 Created vendredi 05 mai 2017
 
-h1. Description
-h1. Version
-h1. Step to reproduce
-h1. Observed
-h1. Expected
-h1. Comments
+h2. Description
+
+h2. Version
+
+h2. Steps to reproduce
+
+h2. Observed
+
+h2. Expected
+
+h2. Comments
+
 
 
 {{collapse

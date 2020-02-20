@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2019-04-23T14:53:14+02:00
+
+====== Files ======
+Created mardi 23 avril 2019
+
+[[/opt/aldebaran/etc/naoqi/prodwhitelist.txt]]
+
+[[/opt/aldebaran/etc/lsb_release]]
+
+[[/opt/aldebaran/share/naoqi/apps/naoqi/manifest.xml]]
+
+[[/etc/prodimage]]
+
+[[/opt/aldebaran/naoqi/coreservices.txt]]
+/opt/aldebaran/etc/naoqi/coreservices.txt
+
+[[/opt/aldebaran/share/naoqi/apps/]]
+
+
+

@@ -5,9 +5,13 @@ Creation-Date: 2017-04-28T09:45:16+02:00
 ====== Robot Commands ======
 Created vendredi 28 avril 2017
 
+===== Mount partition with root image =====
+mount / -o remount,rw
+
 ===== Json on methods =====
 qicli call --json ALTracker.lookAt [1,0,2] 1 0
 qicli call ALDialog.sayError --json [\"error\"] \"test\"
+qicli call ALVisionRecognition.learnFromFile --json "\"/home/nao/learn.jpg\""  \""test\"" "[]" 1 1
 
 ===== Head ID =====
 qicli call ALMemory.getData RobotConfig/Head/FullHeadId

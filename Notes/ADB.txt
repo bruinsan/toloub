@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2020-02-17T09:59:54+01:00
+
+====== ADB ======
+Created lundi 17 février 2020
+
+adb shell am force-stop com.aldebaran.robotservice
+adb shell dumpsys package com.aldebaran.robotservice | grep versionName
